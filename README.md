@@ -1,5 +1,4 @@
 # Bamazon
 
-Hey Kevin Castro, Kevin Lee, Bryan, or David!
+[![Screen shot of working code](/assets/images/workingCode.png "It works!")]
 
-I actually got everything to work except the part where you update the stock, but I'm going to ask about it in office hours to get it fixed~
