@@ -61,7 +61,6 @@ function askUserForHowManyUnitsTheyWouldLIkeToBuy(product_id) {
                 // based on their answer, either call the bid or the post functions
                 if (answer.quantity > 0 && answer.quantity < res[product_id - 1].stock_quantity) {
                     let currentStock = res[product_id - 1].stock_quantity - answer.quantity;
-                    console.log('hi')
 
                     connection.query(
                         "UPDATE products SET stock_quantity = ? WHERE id = ?",
