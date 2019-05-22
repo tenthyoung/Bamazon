@@ -64,17 +64,10 @@ function askUserForHowManyUnitsTheyWouldLIkeToBuy(product_id) {
                     console.log('hi')
 
                     connection.query(
-                        "UPDATE auctions SET ? WHERE ?",
-                        [
-                          {
-                            stock_quantity: currentStock
-                          },
-                          {
-                            id: product_id
-                          }
-                        ],
+                        "UPDATE products SET stock_quantity = ? WHERE id = ?",
+                        [ currentStock, product_id ],
                         function(error) {
-                          if (error) throw err;
+                          if (error) throw error;
                           console.log(`Charge: ${answer.quantity*res[product_id - 1].price}`);
 
                         }
@@ -85,9 +78,9 @@ function askUserForHowManyUnitsTheyWouldLIkeToBuy(product_id) {
                     askUserForHowManyUnitsTheyWouldLIkeToBuy();
 
                 }
+                connection.end();
             });
 
-        connection.end();
     });
 
 
